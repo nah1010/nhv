@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2a1233">
+<title>Gửi Nguyễn Hồng Vân — Chúc Mừng 20/10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2a1233; --wine:#4a1745; --ruby:#c2185b; --rose:#ff8fb1; --blush:#ffd9e5;
+  --lav:#b9a7f0; --champ:#f3deb0; --ink:#fff7fa;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--sans);color:var(--ink);line-height:1.65;overflow-x:hidden;
+  background:linear-gradient(180deg,#3b1448 0%,#5a1a55 30%,#40174f 60%,#2a1233 100%);
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);
+}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+section{position:relative;z-index:2;padding:clamp(56px,10vw,110px) 20px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2}
+.wrap{max-width:960px;margin:0 auto}
+
+/* Buttons */
+.btn{
+  appearance:none;border:0;cursor:pointer;font:500 1rem/1 var(--sans);color:#fff;
+  min-height:48px;padding:0 28px;border-radius:999px;
+  background:linear-gradient(135deg,#ff6b9a,var(--ruby));
+  box-shadow:0 6px 20px rgba(194,24,91,.4);
+  transition:transform .15s ease,opacity .2s;touch-action:manipulation;
+}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.btn:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:3px solid var(--champ);outline-offset:3px}
+
+/* Hero */
+.hero{
+  min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+  padding-top:max(40px,env(safe-area-inset-top));padding-bottom:max(40px,env(safe-area-inset-bottom));
+}
+.glow{position:absolute;inset:-30%;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(circle at 25% 30%,rgba(255,143,177,.45),transparent 40%),
+    radial-gradient(circle at 75% 25%,rgba(185,167,240,.45),transparent 42%),
+    radial-gradient(circle at 50% 80%,rgba(194,24,91,.4),transparent 45%);
+  animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate3d(4%,3%,0) scale(1.08)}}
+.hero-rose{width:clamp(110px,32vw,170px);height:auto;margin-bottom:22px;will-change:transform}
+.hero-rose svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 18px rgba(255,143,177,.6))}
+.en{font-size:clamp(1rem,4vw,1.3rem);letter-spacing:.06em;color:var(--champ);font-family:var(--serif);font-style:italic}
+.vn{font-size:clamp(1.9rem,8.6vw,3.8rem);margin:10px 0 14px;text-wrap:balance;
+  background:linear-gradient(90deg,#fff,var(--blush),var(--champ));-webkit-background-clip:text;background-clip:text;color:transparent}
+.to{font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,5.4vw,1.8rem);color:var(--champ);margin-bottom:10px}
+.sub{max-width:30ch;color:var(--blush);font-weight:300;font-size:clamp(.98rem,3.6vw,1.15rem);margin-bottom:30px}
+.in1,.in2,.in3,.in4{opacity:0;transform:translateY(16px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+.in1{animation-delay:.2s}.in2{animation-delay:.5s}.in3{animation-delay:.85s}.in4{animation-delay:1.2s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* Garden */
+.garden{padding-bottom:0}
+.garden h2,.messages h2{text-align:center;font-size:clamp(1.5rem,6vw,2.2rem);margin-bottom:8px}
+.garden p.lead,.messages p.lead{text-align:center;color:var(--blush);font-weight:300;margin-bottom:12px}
+.scene{width:100%;max-width:640px;margin:0 auto;display:block;height:auto}
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 6s ease-in-out infinite alternate}
+.sway.b{animation-duration:7.5s;animation-delay:-2s}
+.sway.c{animation-duration:5s;animation-delay:-3.5s}
+@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.paused .sway,.paused .glow{animation-play-state:paused}
+
+/* Card */
+.card-sec{display:flex;justify-content:center}
+.card{
+  position:relative;width:100%;max-width:520px;padding:clamp(28px,7vw,44px) clamp(22px,6vw,40px);
+  border-radius:28px;text-align:center;overflow:hidden;
+  background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.06));
+  border:1px solid rgba(255,255,255,.35);
+  box-shadow:0 20px 50px rgba(20,0,30,.45);
+}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .card{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+}
+.card::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(115deg,rgba(255,255,255,.22),transparent 35%)}
+.corner{position:absolute;width:64px;height:64px;opacity:.9}
+.corner.tl{top:-14px;left:-14px}.corner.br{bottom:-14px;right:-14px;transform:rotate(180deg)}
+.card h2{font-size:clamp(1.4rem,5.6vw,1.9rem);margin-bottom:10px;position:relative}
+.card .hint{color:var(--blush);font-weight:300;margin-bottom:22px;position:relative}
+.wish-box{display:grid;grid-template-rows:0fr;transition:grid-template-rows .7s cubic-bezier(.2,.7,.2,1);position:relative}
+.wish-box>div{overflow:hidden;min-height:0}
+.wish p{margin-bottom:14px;font-size:clamp(1rem,3.9vw,1.1rem)}
+.wish p:last-child{margin-bottom:22px}
+.js .wish p{opacity:0;transform:translateY(12px);transition:opacity .8s ease,transform .8s ease}
+.card.open .wish-box{grid-template-rows:1fr}
+.card.open .wish p{opacity:1;transform:none}
+.card.open .wish p:nth-child(2){transition-delay:.35s}
+.card.open .wish p:nth-child(3){transition-delay:.7s}
+.card.open .wish p:nth-child(4){transition-delay:1s}
+html:not(.js) .wish-box{grid-template-rows:1fr}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* Messages */
+.grid{display:grid;gap:16px;margin-top:28px;grid-template-columns:1fr}
+.msg{padding:26px 22px;border-radius:22px;text-align:center;border:1px solid rgba(255,255,255,.22);
+  background:linear-gradient(160deg,rgba(255,143,177,.22),rgba(185,167,240,.14));
+  transition:transform .3s ease}
+.msg svg{width:44px;height:44px;margin-bottom:8px}
+.msg h3{font-size:1.3rem;margin-bottom:6px;color:var(--champ)}
+.msg p{font-weight:300;color:var(--blush)}
+@media (hover:hover){.msg:hover{transform:translateY(-4px)}}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+/* Ending */
+.end{text-align:center;overflow:hidden;padding-bottom:max(48px,env(safe-area-inset-bottom))}
+.end .big{width:clamp(180px,55vw,300px);margin:0 auto 20px;display:block}
+.end .big svg{width:100%;height:auto;display:block;filter:drop-shadow(0 0 30px rgba(255,143,177,.55))}
+.end h2{font-size:clamp(1.5rem,6.4vw,2.4rem);max-width:20ch;margin:0 auto 12px;text-wrap:balance}
+.end .tag{color:var(--champ);font-family:var(--serif);font-style:italic;font-size:1.15rem;margin-bottom:28px}
+footer{position:relative;z-index:2;text-align:center;padding:18px 20px max(22px,env(safe-area-inset-bottom));
+  font-size:.82rem;color:rgba(255,217,229,.75)}
+
+/* Reveal on scroll */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+
+/* Hearts */
+.heart{
+  position:absolute;width:var(--s);height:var(--s);background:var(--c);opacity:0;
+  -webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;
+  --m:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21C5 16 2 12 2 8.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 10 2.5C22 12 19 16 12 21z'/%3E%3C/svg%3E");
+  animation:float 2.6s ease-out forwards;will-change:transform,opacity;
+}
+@keyframes float{
+  0%{opacity:0;transform:translate3d(0,0,0) scale(.5)}
+  12%{opacity:.95}
+  55%{transform:translate3d(var(--dx),-34vh,0) scale(1)}
+  100%{opacity:0;transform:translate3d(calc(var(--dx) * -.6),-68vh,0) scale(.9)}
+}
+
+/* Reduced / low-power */
+.calm .glow,.calm .sway{animation:none}
+.calm .heart{animation-duration:1.4s}
+.calm .in1,.calm .in2,.calm .in3,.calm .in4{animation-duration:.01s;animation-delay:0s}
+.calm .card{-webkit-backdrop-filter:none;backdrop-filter:none;background:rgba(80,30,80,.75);box-shadow:none}
+.calm .wish-box,.calm .wish p,.calm .rv{transition-duration:.01s;transition-delay:0s!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Shared SVG art -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="rg" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#ff9fbd"/><stop offset=".55" stop-color="#e0306f"/><stop offset="1" stop-color="#8e0f45"/>
+    </radialGradient>
+    <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9ad7a8"/><stop offset="1" stop-color="#2f7d5b"/>
+    </linearGradient>
+    <symbol id="rose" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="url(#rg)"/>
+      <path d="M12 46C14 24 34 10 54 12c-14 4-22 12-22 24-8-2-16 2-20 10z" fill="rgba(255,255,255,.16)"/>
+      <path d="M50 50c-9-11 6-20 15-11s-2 25-17 21-15-25 3-33 37 5 32 27" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M26 66c8 16 32 18 46 4" fill="none" stroke="rgba(60,0,30,.35)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M82 38c-3-10-12-18-22-20" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 40 24"><path d="M2 12C12 0 30 0 38 12 30 24 12 24 2 12z" fill="url(#lf)"/></symbol>
+    <symbol id="heartI" viewBox="0 0 24 24"><path d="M12 21C5 16 2 12 2 8.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 10 2.5C22 12 19 16 12 21z" fill="url(#rg)"/></symbol>
+    <symbol id="corner" viewBox="0 0 64 64">
+      <use href="#rose" x="2" y="2" width="34" height="34"/>
+      <use href="#leaf" x="30" y="14" width="30" height="18"/>
+      <use href="#leaf" x="8" y="34" width="30" height="18" transform="rotate(70 23 43)"/>
+      <circle cx="46" cy="46" r="3" fill="#f3deb0"/>
+    </symbol>
+  </defs>
+</svg>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="hearts" aria-hidden="true"></div>
+
+<main>
+  <!-- A. Welcome -->
+  <section class="hero" id="top">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="hero-rose in1" id="heroRose"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rose"/></svg></div>
+    <p class="en in1">Happy Vietnamese Women’s Day</p>
+    <h1 class="vn in2">Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</h1>
+    <p class="to in3">Gửi riêng Nguyễn Hồng Vân</p>
+    <p class="sub in3">Dành tặng những điều tuyệt vời nhất đến người phụ nữ tuyệt vời của riêng mình.</p>
+    <button class="btn in4" id="openGift" type="button">Mở món quà yêu thương ♡</button>
+  </section>
+
+  <!-- B. Garden -->
+  <section class="garden" id="garden">
+    <div class="wrap">
+      <h2 class="rv">Khu vườn dành cho Hồng Vân</h2>
+      <p class="lead rv">Chạm vào màn hình để gửi đi những trái tim.</p>
+      <svg class="scene rv" viewBox="0 0 400 280" role="img" aria-label="Khu vườn hoa hồng đung đưa trong gió">
+        <!-- back layer -->
+        <g opacity=".7">
+          <g class="sway b"><path d="M70 280C72 230 66 200 70 160" stroke="#3e8a66" stroke-width="3" fill="none"/>
+            <use href="#leaf" x="72" y="205" width="26" height="15" transform="rotate(-25 72 205)"/>
+            <use href="#rose" x="44" y="118" width="52" height="52"/></g>
+          <g class="sway c"><path d="M335 280C333 235 340 205 336 168" stroke="#3e8a66" stroke-width="3" fill="none"/>
+            <use href="#leaf" x="310" y="215" width="26" height="15" transform="rotate(200 323 222)"/>
+            <use href="#rose" x="310" y="126" width="52" height="52"/></g>
+        </g>
+        <!-- mid layer -->
+        <g class="sway"><path d="M140 280C138 220 150 180 144 130" stroke="#2f7d5b" stroke-width="4" fill="none"/>
+          <use href="#leaf" x="146" y="205" width="36" height="21" transform="rotate(-20 146 205)"/>
+          <use href="#leaf" x="108" y="176" width="36" height="21" transform="rotate(200 126 186)"/>
+          <use href="#rose" x="106" y="84" width="76" height="76"/></g>
+        <g class="sway b"><path d="M262 280C264 225 252 185 258 138" stroke="#2f7d5b" stroke-width="4" fill="none"/>
+          <use href="#leaf" x="262" y="208" width="36" height="21" transform="rotate(-25 262 208)"/>
+          <use href="#leaf" x="224" y="182" width="36" height="21" transform="rotate(195 242 192)"/>
+          <use href="#rose" x="220" y="92" width="76" height="76"/></g>
+        <!-- front hero -->
+        <g class="sway c"><path d="M200 280C198 215 206 170 200 110" stroke="#256b4c" stroke-width="5" fill="none"/>
+          <use href="#leaf" x="204" y="200" width="46" height="27" transform="rotate(-22 204 200)"/>
+          <use href="#leaf" x="150" y="170" width="46" height="27" transform="rotate(200 173 183)"/>
+          <use href="#rose" x="146" y="36" width="108" height="108"/></g>
+        <circle cx="200" cy="90" r="70" fill="rgba(255,143,177,.12)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- C. Card -->
+  <section class="card-sec" id="card">
+    <article class="card rv" id="wishCard">
+      <svg class="corner tl" viewBox="0 0 64 64" aria-hidden="true"><use href="#corner"/></svg>
+      <svg class="corner br" viewBox="0 0 64 64" aria-hidden="true"><use href="#corner"/></svg>
+      <h2>Một lời chúc nhỏ dành riêng cho Hồng Vân</h2>
+      <p class="hint">Có điều dịu dàng đang chờ bạn bên dưới.</p>
+      <div class="wish-box"><div>
+        <div class="wish" id="wish" tabindex="-1" aria-live="polite">
+          <p>Nhân ngày 20/10, chúc Hồng Vân luôn xinh đẹp theo cách riêng của mình, luôn vui vẻ, hạnh phúc và được yêu thương thật nhiều.</p>
+          <p>Mong rằng mỗi ngày đều mang đến cho bạn những điều dịu dàng, những nụ cười chân thành và thật nhiều lý do để hạnh phúc.</p>
+          <p>Chúc bạn luôn tự tin, tỏa sáng và biến những ước mơ đẹp nhất thành hiện thực. 💗</p>
+        </div>
+      </div></div>
+      <div class="actions">
+        <button class="btn" id="getWish" type="button" aria-expanded="false" aria-controls="wish">Nhận lời chúc đặc biệt</button>
+        <button class="btn ghost" id="sendLove" type="button">♡ Gửi trái tim</button>
+      </div>
+    </article>
+  </section>
+
+  <!-- E. Messages -->
+  <section class="messages" id="messages">
+    <div class="wrap">
+      <h2 class="rv">Ba điều mong ước</h2>
+      <p class="lead rv">Gửi đến Hồng Vân, bằng cả tấm lòng.</p>
+      <div class="grid">
+        <div class="msg rv"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rose"/></svg><h3>Luôn rạng rỡ</h3><p>Chúc bạn giữ mãi nụ cười và sự tự tin của mình.</p></div>
+        <div class="msg rv"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heartI"/></svg><h3>Luôn hạnh phúc</h3><p>Mong những điều bình dị nhất cũng mang đến niềm vui.</p></div>
+        <div class="msg rv"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#rose"/></svg><h3>Luôn được yêu thương</h3><p>Chúc bạn nhận được thật nhiều sự quan tâm và trân trọng.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- F. Ending -->
+  <section class="end" id="end">
+    <div class="wrap">
+      <div class="big rv" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#rose"/></svg></div>
+      <h2 class="rv">Thế giới sẽ dịu dàng hơn khi có bạn. ♡</h2>
+      <p class="tag rv">Happy Women’s Day — 20.10<br>Gửi Nguyễn Hồng Vân</p>
+      <button class="btn ghost rv" id="toTop" type="button">Quay lại đầu trang</button>
+    </div>
+  </section>
+</main>
+<footer>Làm với tất cả sự trân trọng · 20/10</footer>
+
+<script>
+(function(){
+  'use strict';
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var $=function(s){return d.querySelector(s)};
+  var mq=matchMedia('(prefers-reduced-motion: reduce)');
+  var reduced=mq.matches;
+  function setCalm(){root.classList.toggle('calm',reduced)}
+  setCalm();
+  var onMq=function(){reduced=mq.matches;setCalm();sizeCanvas();seed();reduced?stop():start()};
+  mq.addEventListener?mq.addEventListener('change',onMq):mq.addListener(onMq);
+
+  /* ---------- Scroll reveal ---------- */
+  var rvEls=d.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px',threshold:.12});
+    rvEls.forEach(function(el){io.observe(el)});
+  }else{rvEls.forEach(function(el){el.classList.add('in')})}
+
+  /* ---------- Hearts ---------- */
+  var layer=$('#hearts'), alive=0, MAX=24, last=0;
+  var cols=['#ff5c8a','#e8174f','#ffffff','#c9b6ff','#ffb3cb'];
+  function heart(x,y){
+    if(alive>=MAX) return;
+    alive++;
+    var s=d.createElement('span');
+    s.className='heart';
+    s.style.left=x+'px'; s.style.top=y+'px';
+    s.style.setProperty('--s',(14+Math.random()*16).toFixed(0)+'px');
+    s.style.setProperty('--c',cols[Math.random()*cols.length|0]);
+    s.style.setProperty('--dx',((Math.random()-.5)*90).toFixed(0)+'px');
+    s.style.animationDelay=(Math.random()*.15).toFixed(2)+'s';
+    s.addEventListener('animationend',function(){s.remove();alive--},{once:true});
+    layer.appendChild(s);
+  }
+  function burst(x,y,n){for(var i=0;i<n;i++)heart(x+(Math.random()-.5)*30,y+(Math.random()-.5)*20)}
+  d.addEventListener('pointerdown',function(e){
+    var t=performance.now();
+    if(t-last<90) return;
+    last=t; burst(e.clientX,e.clientY,reduced?1:2);
+  },{passive:true});
+
+  /* ---------- Buttons ---------- */
+  function center(el){var r=el.getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2]}
+  $('#openGift').addEventListener('click',function(){
+    var c=center(this); burst(c[0],c[1],6);
+    $('#garden').scrollIntoView({behavior:reduced?'auto':'smooth'});
+  });
+  var card=$('#wishCard'), getBtn=$('#getWish');
+  getBtn.addEventListener('click',function(){
+    card.classList.add('open');
+    getBtn.setAttribute('aria-expanded','true');
+    getBtn.disabled=true;
+    var c=center(getBtn); burst(c[0],c[1],8);
+    setTimeout(function(){
+      $('#wish').focus({preventScroll:true});
+      card.scrollIntoView({behavior:reduced?'auto':'smooth',block:'center'});
+    },350);
+  });
+  $('#sendLove').addEventListener('click',function(){var c=center(this);burst(c[0],c[1],7)});
+  $('#toTop').addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:reduced?'auto':'smooth'});
+  });
+
+  /* ---------- Canvas: sparkles + petals ---------- */
+  var cv=$('#fx'), ctx=cv.getContext&&cv.getContext('2d');
+  var W=0,H=0,dpr=1,parts=[],raf=0,running=false,prev=0,tick=0;
+  function sizeCanvas(){
+    if(!ctx) return;
+    dpr=Math.min(window.devicePixelRatio||1,1.5);
+    W=innerWidth;H=innerHeight;
+    cv.width=W*dpr;cv.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function counts(){
+    var small=W<600;
+    return reduced?{s:10,p:0}:{s:small?18:34,p:small?6:12};
+  }
+  function make(kind,init){
+    var x=Math.random()*W;
+    if(kind==='s') return {k:'s',x:x,y:Math.random()*H,r:.8+Math.random()*1.9,vy:-(.08+Math.random()*.2),ph:Math.random()*6.28,sp:.6+Math.random()};
+    return {k:'p',x:x,y:init?Math.random()*H:-20,sz:6+Math.random()*6,vy:.35+Math.random()*.45,vx:.15+Math.random()*.3,
+      rot:Math.random()*6.28,vr:(Math.random()-.5)*.03,ph:Math.random()*6.28};
+  }
+  function seed(){
+    if(!ctx) return;
+    var c=counts(); parts=[];
+    for(var i=0;i<c.s;i++)parts.push(make('s',true));
+    for(var j=0;j<c.p;j++)parts.push(make('p',true));
+    draw(0);
+  }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<parts.length;i++){
+      var p=parts[i];
+      if(p.k==='s'){
+        var a=.35+.35*Math.sin(t*.001*p.sp+p.ph);
+        ctx.fillStyle='rgba(255,236,200,'+a.toFixed(2)+')';
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.283);ctx.fill();
+      }else{
+        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);
+        ctx.fillStyle='rgba(255,150,185,.7)';
+        ctx.beginPath();ctx.ellipse(0,0,p.sz,p.sz*.55,0,0,6.283);ctx.fill();
+        ctx.restore();
+      }
+    }
+  }
+  function frame(t){
+    if(!running) return;
+    var dt=Math.min((t-prev)/16.7||1,3); prev=t;
+    for(var i=0;i<parts.length;i++){
+      var p=parts[i];
+      if(p.k==='s'){
+        p.y+=p.vy*dt;
+        if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
+      }else{
+        p.y+=p.vy*dt; p.ph+=.02*dt;
+        p.x+=(p.vx+Math.sin(p.ph)*.4)*dt; p.rot+=p.vr*dt;
+        if(p.y>H+20||p.x>W+20){p.y=-20;p.x=Math.random()*W*.9}
+      }
+    }
+    draw(t);
+    raf=requestAnimationFrame(frame);
+  }
+  function start(){
+    if(!ctx||running||reduced||d.hidden) return;
+    running=true;prev=performance.now();raf=requestAnimationFrame(frame);
+    root.classList.remove('paused');
+  }
+  function stop(){
+    running=false;cancelAnimationFrame(raf);
+    root.classList.add('paused');
+  }
+  d.addEventListener('visibilitychange',function(){d.hidden?stop():start()});
+  var rz=0;
+  addEventListener('resize',function(){
+    clearTimeout(rz);
+    rz=setTimeout(function(){sizeCanvas();seed()},200);
+  },{passive:true});
+  sizeCanvas();seed();start();
+
+  /* ---------- Subtle parallax (hero rose) ---------- */
+  var hero=$('#top'), rose=$('#heroRose svg'), heroVis=true, pend=false;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){heroVis=es[0].isIntersecting}).observe(hero);
+  }
+  addEventListener('scroll',function(){
+    if(reduced||!heroVis||pend) return;
+    pend=true;
+    requestAnimationFrame(function(){
+      pend=false;
+      rose.style.transform='translate3d(0,'+(window.scrollY*.12).toFixed(1)+'px,0)';
+    });
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
